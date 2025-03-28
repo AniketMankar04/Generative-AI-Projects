@@ -25,7 +25,7 @@ def get_text_chunks(text):
 
 # convert the chunks into embeddings and stored it in vector store
 def get_vector_store(chunks):
-    embeddings =  OllamaEmbeddings(model ='deepseek-r1:1.5b')
+    embeddings =  OllamaEmbeddings(model ='llama3.2:1b')
     vector_store = FAISS.from_texts(chunks, embedding=embeddings)
     vector_store.save_local("faiss_index")
 
